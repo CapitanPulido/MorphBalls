@@ -13,10 +13,20 @@ public class BolaSimple : MonoBehaviour
 
     public float maxSpeed = 10f; // Velocidad máxima esperada
     public float moveForce = 5f; // Fuerza de movimiento
-    public float groundCheckDistance = 0.1f; // Distancia para detectar el suelo
-    public LayerMask groundLayer; // Capa del suelo
+    public float friction = 0.95f; // Fricción para reducir la velocidad
+
+    public Sprite spritewood;
+    public Sprite spritemetal;
+    public Sprite spriteplastic;
+
+    public SpriteRenderer render;
 
     private float speed; // Velocidad actual de la pelota
+    private float moveDirection = 0f; // Dirección del movimiento
+    public bool enSuelo = false; // Bandera para saber si está tocando el suelo
+
+    public bool left = false;
+    public bool right = false;
 
     void Start()
     {
@@ -33,7 +43,8 @@ public class BolaSimple : MonoBehaviour
     {
         Mover();
 
-        speed = rb.velocity.magnitude; // Calcula la magnitud de la velocidad
+        // Calcula la magnitud de la velocidad
+        speed = rb.velocity.magnitude;
 
         // Actualiza el Slider con la velocidad
         if (speedometer != null)
@@ -44,47 +55,78 @@ public class BolaSimple : MonoBehaviour
         // Actualiza el TextMeshPro con la velocidad
         if (speedText != null)
         {
-            speedText.text = "Velocidad: " + speed.ToString("F2"); // Muestra la velocidad con 2 decimales
+            speedText.text = "Velocidad: " + speed.ToString("F2");
+        }
+
+        // Si no se mueve y está en el suelo, aplica fricción para frenar
+        if (moveDirection == 0 && enSuelo == true)
+        {
+            rb.velocity *= friction;
+            if (rb.velocity.magnitude < 0.1f)
+            {
+                rb.velocity = Vector2.zero; // Detiene por completo si la velocidad es muy baja
+            }
         }
     }
 
     void Mover()
     {
-        float movimientoHorizontal = Input.GetAxis("Horizontal"); // Captura el input horizontal
+        rb.AddForce(Vector2.right * moveDirection * moveForce, ForceMode2D.Force);
+    }
 
-        if (EnSuelo())
+    // Detecta si toca el suelo
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Suelo"))
         {
-            // Ajusta la fuerza en la dirección del suelo
-            Vector2 direccionSuelo = ObtenerDireccionSuelo();
-            rb.AddForce(direccionSuelo * movimientoHorizontal * moveForce, ForceMode2D.Force);
-        }
-        else
-        {
-            // Movimiento libre en el aire
-            rb.AddForce(Vector2.right * movimientoHorizontal * moveForce, ForceMode2D.Force);
+            enSuelo = true;
         }
     }
 
-    bool EnSuelo()
+    void OnCollisionExit2D(Collision2D collision)
     {
-        // Detecta si la bola está tocando el suelo
-        return Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayer);
-    }
-
-    Vector2 ObtenerDireccionSuelo()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayer);
-        if (hit.collider != null)
+        if (collision.gameObject.CompareTag("Suelo"))
         {
-            return Vector2.Perpendicular(hit.normal).normalized * Mathf.Sign(Input.GetAxis("Horizontal"));
+            enSuelo = false;
         }
-        return Vector2.right;
     }
 
-    void OnDrawGizmos()
+    // Métodos para cambiar la gravedad y el sprite
+    public void GravityWood()
     {
-        // Dibuja el raycast en la escena para visualizar la detección del suelo
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * groundCheckDistance);
+        rb.mass = 5;
+        render.sprite = spritewood;
+    }
+
+    public void GravityMetal()
+    {
+        rb.mass = 20;
+        render.sprite = spritemetal;
+    }
+
+    public void GravityPlastic()
+    {
+        rb.mass = 1;
+        render.sprite = spriteplastic;
+    }
+
+    // Métodos para mover la bola
+    public void MoveLeft()
+    {
+        moveDirection = -1f;
+        left = true;
+        right = false;
+    }
+
+    public void MoveRight()
+    {
+        moveDirection = 1f;
+        right = true;
+        left = false;
+    }
+
+    public void StopMoving()
+    {
+        moveDirection = 0f;
     }
 }

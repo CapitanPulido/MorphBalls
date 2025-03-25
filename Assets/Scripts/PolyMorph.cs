@@ -1,40 +1,45 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PolyMorph : MonoBehaviour
 {
-    public Rigidbody2D rb;                // Referencia al Rigidbody2D
-    public Texture2D[] texturas;          // Arreglo de texturas (arrástralas en el inspector)
-    public Renderer render;               // Renderer del objeto (para cambiar la textura)
+    public Sprite spritewood;  
+    public Sprite spritemetal;  
+    public Sprite spriteplastic;  
 
-    private int contador = 0;             // Cuenta las veces que se presiona la tecla
+    private int clickCount = 0;
+    private Image buttonImage;
+
+    public BolaSimple Ball;
 
     void Start()
     {
-        if (rb == null)
-            rb = GetComponent<Rigidbody2D>();
-        if (render == null)
-            render = GetComponent<Renderer>();
+        buttonImage = GetComponent<Image>();
+        buttonImage.sprite = spritewood;  // Iniciar con sprite normal
     }
 
-    void Update()
+    public void ChangeGravity()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        clickCount++;
+
+        switch (clickCount % 3)
         {
-            contador++;
+            case 1:  
+                buttonImage.sprite = spritemetal;
+                Ball.GravityMetal();
+                Debug.Log("MetalBall");
+                break;
+            case 2:
+                buttonImage.sprite = spriteplastic;
+                Ball.GravityPlastic();
+                Debug.Log("PlasticBall");
+                break;
+            case 0:
+                buttonImage.sprite = spritewood;
+                Ball.GravityWood();
+                Debug.Log("WoodBall");
 
-            // Ajustar el valor entre 1 y 3
-            contador = Mathf.Clamp(contador, 1, 3);
-
-            // Cambiar la masa
-            rb.mass = contador;
-
-            // Cambiar la textura si está disponible
-            if (texturas.Length >= contador)
-            {
-                render.material.mainTexture = texturas[contador - 1];
-            }
-
-            Debug.Log("Masa actual: " + rb.mass);
+                break;
         }
     }
 }
