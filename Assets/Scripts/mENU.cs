@@ -12,23 +12,14 @@ public class mENU : MonoBehaviour
     {
         opciones.SetActive(false);
     }
-    public void Jugar()
+    public void LoadScene(string scene)
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(scene);
     }
 
-    public void Opciones()
+    public void Salir()
     {
-        SceneManager.LoadScene("Rick");
+        Application.Quit();
     }
 
-    public void Opciones2()
-    {
-        opciones.SetActive(true);
-    }    
-
-    public void Return()
-    {
-        SceneManager.LoadScene("Menu");
-    }
 }
