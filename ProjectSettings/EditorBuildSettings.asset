@@ -6,7 +6,58 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: c6867f8ad0597b842b667a888ab4ee0d
+  - enabled: 1
+    path: Assets/Scenes/MenuNiveles.unity
+    guid: b082927d78605b946a5f69eee114a7aa
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Scenes/Niveles/1.unity
+    guid: b8abafdf5b29a9f499a052298fa80bd0
+  - enabled: 1
+    path: Assets/Scenes/Niveles/2.unity
+    guid: 822ef0696a493f549805183a494275c2
+  - enabled: 0
+    path: Assets/Scenes/Niveles/3.unity
+    guid: c2cbd1c4e0cd49f4296ef2a95b5d0f24
+  - enabled: 0
+    path: Assets/Scenes/Niveles/4.unity
+    guid: eefe3325a4ac20849bea9e694b981909
+  - enabled: 0
+    path: Assets/Scenes/Niveles/5.unity
+    guid: 31874767a486cba45854f868c0f04d83
+  - enabled: 0
+    path: Assets/Scenes/Niveles/6.unity
+    guid: 6d0f5bad08fa93d4fae23b9146c96047
+  - enabled: 0
+    path: Assets/Scenes/Niveles/7.unity
+    guid: 6576603176c1f294495ea5e79d4672b5
+  - enabled: 0
+    path: Assets/Scenes/Niveles/8.unity
+    guid: e67560b148997344b9344e22222a9f68
+  - enabled: 0
+    path: Assets/Scenes/Niveles/9.unity
+    guid: 131fa5235282f78429491cc6317a02d1
+  - enabled: 0
+    path: Assets/Scenes/Niveles/10.unity
+    guid: f1a69cefcea93b54993dc1f0f415b779
+  - enabled: 0
+    path: Assets/Scenes/Niveles/11.unity
+    guid: 11522527e42e0504db8ef802145c7d33
+  - enabled: 0
+    path: Assets/Scenes/Niveles/12.unity
+    guid: 609b57bd1b3d39040be31cf60ad6512c
+  - enabled: 0
+    path: Assets/Scenes/Niveles/13.unity
+    guid: 4d5c55db0976ec7478852e13a171c97c
+  - enabled: 0
+    path: Assets/Scenes/Niveles/14.unity
+    guid: 9bc11946e738c394aafad92cab1e1807
+  - enabled: 0
+    path: Assets/Scenes/Niveles/15.unity
+    guid: 70ea813d4f1dfb642b7db76482600abb
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 20688c8cdc97ada44a7ae3c45175f772, type: 2}
