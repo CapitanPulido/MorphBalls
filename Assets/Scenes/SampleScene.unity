@@ -902,6 +902,8 @@ GameObject:
   - component: {fileID: 983905635}
   - component: {fileID: 983905634}
   - component: {fileID: 983905633}
+  - component: {fileID: 983905637}
+  - component: {fileID: 983905636}
   m_Layer: 5
   m_Name: Der
   m_TagString: Untagged
@@ -972,19 +974,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 983905634}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1111937868}
-        m_TargetAssemblyTypeName: BolaSimple, Assembly-CSharp
-        m_MethodName: MoveRight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &983905634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,6 +1013,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983905631}
   m_CullTransparentMesh: 1
+--- !u!114 &983905636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983905631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 983905637}
+          m_TargetAssemblyTypeName: Right, Assembly-CSharp
+          m_MethodName: MRight1
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 983905637}
+          m_TargetAssemblyTypeName: Right, Assembly-CSharp
+          m_MethodName: MRight2
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &983905637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983905631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2496a39a9c8e217429d9768d6a9583a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 1111937868}
 --- !u!1 &1111937865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,11 +1134,15 @@ MonoBehaviour:
   speedText: {fileID: 489473259}
   maxSpeed: 100
   moveForce: 5
-  friction: 0.95
+  friction: 0.99
   spritewood: {fileID: 0}
   spritemetal: {fileID: 0}
   spriteplastic: {fileID: 0}
   render: {fileID: 1111937869}
+  enSuelo: 0
+  left: 0
+  right: 0
+  velocidad: 3
 --- !u!212 &1111937869
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1760,6 +1812,8 @@ GameObject:
   - component: {fileID: 1719693974}
   - component: {fileID: 1719693973}
   - component: {fileID: 1719693972}
+  - component: {fileID: 1719693975}
+  - component: {fileID: 1719693976}
   m_Layer: 5
   m_Name: Izq
   m_TagString: Untagged
@@ -1830,19 +1884,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1719693973}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1111937868}
-        m_TargetAssemblyTypeName: BolaSimple, Assembly-CSharp
-        m_MethodName: MoveLeft
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1719693973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1881,6 +1923,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719693970}
   m_CullTransparentMesh: 1
+--- !u!114 &1719693975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719693970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97644f4c2e8799479d60e369c239344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 1111937868}
+--- !u!114 &1719693976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719693970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1719693975}
+          m_TargetAssemblyTypeName: Left, Assembly-CSharp
+          m_MethodName: MLeft1
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1719693975}
+          m_TargetAssemblyTypeName: Left, Assembly-CSharp
+          m_MethodName: MLeft2
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1836141919
 GameObject:
   m_ObjectHideFlags: 0

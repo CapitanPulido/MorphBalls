@@ -28,6 +28,7 @@ public class BolaSimple : MonoBehaviour
     public bool left = false;
     public bool right = false;
 
+    public float velocidad;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -113,16 +114,16 @@ public class BolaSimple : MonoBehaviour
     // Métodos para mover la bola
     public void MoveLeft()
     {
-        moveDirection = -1f;
-        left = true;
-        right = false;
+        moveDirection = -velocidad;
     }
 
     public void MoveRight()
     {
-        moveDirection = 1f;
+        moveDirection = velocidad;
         right = true;
         left = false;
+
+        
     }
 
     public void StopMoving()
