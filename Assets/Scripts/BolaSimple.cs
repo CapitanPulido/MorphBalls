@@ -10,6 +10,7 @@ public class BolaSimple : MonoBehaviour
     public TextMeshProUGUI speedText; // Referencia al TextMeshPro
 
     private Rigidbody2D rb;
+    public PolyMorph morph;
 
     public float maxSpeed = 10f; // Velocidad máxima esperada
     public float moveForce = 5f; // Fuerza de movimiento
@@ -130,4 +131,36 @@ public class BolaSimple : MonoBehaviour
     {
         moveDirection = 0f;
     }
+
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Agua"))
+        {
+            morph.DetectarAgua();
+            //morph.AplicarPropiedadesMaterial();
+        }
+    }
+
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Agua"))
+        {
+
+        }
+    }
+
+
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Agua"))
+        {
+            morph.SaliAgua();
+            rb.gravityScale = 1; // Restaurar la gravedad normal
+        }
+    }
+
+
 }
