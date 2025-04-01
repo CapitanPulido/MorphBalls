@@ -19,45 +19,45 @@ EditorBuildSettings:
     guid: b8abafdf5b29a9f499a052298fa80bd0
   - enabled: 1
     path: Assets/Scenes/Niveles/2.unity
-    guid: 822ef0696a493f549805183a494275c2
-  - enabled: 0
+    guid: 8354fe837d4af3840bffc9d0f16f9099
+  - enabled: 1
     path: Assets/Scenes/Niveles/3.unity
-    guid: c2cbd1c4e0cd49f4296ef2a95b5d0f24
-  - enabled: 0
+    guid: b1a0a59658678c043858d1080f4aba0f
+  - enabled: 1
     path: Assets/Scenes/Niveles/4.unity
-    guid: eefe3325a4ac20849bea9e694b981909
-  - enabled: 0
+    guid: 5b6872ffc1dc77a4ca2fd92e7ce59cea
+  - enabled: 1
     path: Assets/Scenes/Niveles/5.unity
-    guid: 31874767a486cba45854f868c0f04d83
-  - enabled: 0
+    guid: 75b9890599c8bfb4890ce77fcb3ff0e6
+  - enabled: 1
     path: Assets/Scenes/Niveles/6.unity
-    guid: 6d0f5bad08fa93d4fae23b9146c96047
-  - enabled: 0
+    guid: 905c93d6e58d91c40a9209bd090f7854
+  - enabled: 1
     path: Assets/Scenes/Niveles/7.unity
-    guid: 6576603176c1f294495ea5e79d4672b5
-  - enabled: 0
+    guid: 30e7f87e92231e44480e520a5a3933cd
+  - enabled: 1
     path: Assets/Scenes/Niveles/8.unity
-    guid: e67560b148997344b9344e22222a9f68
-  - enabled: 0
+    guid: ccb19d5f3f2f1fa49a6b9e60eb11a6f7
+  - enabled: 1
     path: Assets/Scenes/Niveles/9.unity
-    guid: 131fa5235282f78429491cc6317a02d1
-  - enabled: 0
+    guid: 4170562db4fc0b34b8b3a1b1ad2f5d86
+  - enabled: 1
     path: Assets/Scenes/Niveles/10.unity
-    guid: f1a69cefcea93b54993dc1f0f415b779
-  - enabled: 0
+    guid: fb6d73bfe893670499c681f9c33b8e3c
+  - enabled: 1
     path: Assets/Scenes/Niveles/11.unity
-    guid: 11522527e42e0504db8ef802145c7d33
-  - enabled: 0
+    guid: 08ac033259c267b4c9f4c59c7307ce09
+  - enabled: 1
     path: Assets/Scenes/Niveles/12.unity
-    guid: 609b57bd1b3d39040be31cf60ad6512c
-  - enabled: 0
+    guid: 9e34f3222d4498a4781fea31475f316f
+  - enabled: 1
     path: Assets/Scenes/Niveles/13.unity
-    guid: 4d5c55db0976ec7478852e13a171c97c
-  - enabled: 0
+    guid: 5e8274547e1d4a0409a315bdc40770fe
+  - enabled: 1
     path: Assets/Scenes/Niveles/14.unity
-    guid: 9bc11946e738c394aafad92cab1e1807
-  - enabled: 0
+    guid: dd104877a02c8574a88394fc0e77f081
+  - enabled: 1
     path: Assets/Scenes/Niveles/15.unity
-    guid: 70ea813d4f1dfb642b7db76482600abb
+    guid: 8e29c9ea52502eb4690c69099e8e27d4
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 20688c8cdc97ada44a7ae3c45175f772, type: 2}
