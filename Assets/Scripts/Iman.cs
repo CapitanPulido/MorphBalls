@@ -10,22 +10,33 @@ public class Magnet : MonoBehaviour
 
     public BolaSimple bola;
 
+    public bool enrango = false;
+
 
     public void Update()
     {
-        
-    }
-    void OnTriggerStay2D(Collider2D other)
-    {
-        //BolaSimple bola = other.GetComponent<BolaSimple>();
-        if (morph.Metal == true) // Solo atrae si la bola es de metal
+       if(enrango == true)
         {
             Rigidbody2D rb = bola.GetComponent<Rigidbody2D>();
             Vector2 direccionAtraccion = (Vector2)transform.position + direccion * rango - rb.position;
             rb.AddForce(direccionAtraccion.normalized * fuerzaAtraccion);
             Debug.Log("BolaEnRango");
         }
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (morph.Metal && collision.gameObject.CompareTag("Pelota"))
+        {
+            enrango = true;
+        }
+    }
 
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (morph.Metal && collision.gameObject.CompareTag("Pelota"))
+        {
+            enrango = false;
+        }
     }
 
     void OnDrawGizmos()
