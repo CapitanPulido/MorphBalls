@@ -1,3 +1,4 @@
+using UnityEditor.AnimatedValues;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +20,8 @@ public class PolyMorph : MonoBehaviour
     public bool Madera;
     public bool Metal;
     public bool Plastico;
+
+    public BolaSimple ball;
 
     void Start()
     {
@@ -83,6 +86,8 @@ public class PolyMorph : MonoBehaviour
             case 1:
                 render.sprite = spriteplastico;
                 buttonImage.sprite = spriteplastico;
+
+                ball.GravityPlastic();
                 Madera = false;
                 Plastico = true;
                 Metal = false;
@@ -92,6 +97,8 @@ public class PolyMorph : MonoBehaviour
             case 2:
                 render.sprite = spritemetal;
                 buttonImage.sprite = spritemetal;
+
+                ball.GravityMetal();
                 Madera = false;
                 Plastico = false;
                 Metal = true;
@@ -101,6 +108,8 @@ public class PolyMorph : MonoBehaviour
             case 0:
                 render.sprite = spritemadera;
                 buttonImage.sprite = spritemadera;
+
+                ball.GravityWood();
                 Madera = true;
                 Plastico = false;
                 Metal = false;

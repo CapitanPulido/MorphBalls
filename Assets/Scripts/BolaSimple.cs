@@ -30,6 +30,15 @@ public class BolaSimple : MonoBehaviour
     public bool right = false;
 
     public float velocidad;
+
+    public CircleCollider2D col; // Referencia al Collider
+
+    // Materiales físicos
+    public PhysicsMaterial2D woodMaterial;
+    public PhysicsMaterial2D metalMaterial;
+    public PhysicsMaterial2D plasticMaterial;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -39,6 +48,9 @@ public class BolaSimple : MonoBehaviour
             speedometer.minValue = 0;
             speedometer.maxValue = maxSpeed;
         }
+
+        GravityWood();
+ 
     }
 
     void Update()
@@ -47,6 +59,12 @@ public class BolaSimple : MonoBehaviour
 
         // Calcula la magnitud de la velocidad
         speed = rb.velocity.magnitude;
+
+        // Limita la velocidad máxima si está en el suelo
+        if (enSuelo && speed > maxSpeed)
+        {
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
 
         // Actualiza el Slider con la velocidad
         if (speedometer != null)
@@ -96,20 +114,25 @@ public class BolaSimple : MonoBehaviour
     // Métodos para cambiar la gravedad y el sprite
     public void GravityWood()
     {
-        rb.mass = 5;
-        render.sprite = spritewood;
+        //rb.mass = 5;
+        render.sprite = spritewood; 
+        col.sharedMaterial = woodMaterial;
+        
     }
 
     public void GravityMetal()
     {
-        rb.mass = 20;
+        //rb.mass = 20;
         render.sprite = spritemetal;
+        col.sharedMaterial = metalMaterial;
     }
 
     public void GravityPlastic()
     {
-        rb.mass = 1;
+        //rb.mass = 1;
         render.sprite = spriteplastic;
+        col.sharedMaterial = plasticMaterial;
+        Debug.Log("BouncePlastic");
     }
 
     // Métodos para mover la bola
