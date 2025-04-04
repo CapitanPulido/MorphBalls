@@ -39,6 +39,10 @@ public class BolaSimple : MonoBehaviour
     public PhysicsMaterial2D plasticMaterial;
 
 
+    public void Awake()
+    {
+        AutoReferenceUI();
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -50,8 +54,29 @@ public class BolaSimple : MonoBehaviour
         }
 
         GravityWood();
- 
+
     }
+    public void AutoReferenceUI()
+    {
+        GameObject canvas = GameObject.Find("Controles"); // cambia el nombre según tu Canvas
+        
+        if (canvas != null)
+        {
+            speedometer = canvas.transform.Find("SliderVelocidad")?.GetComponent<Slider>();
+            speedText = canvas.transform.Find("TextoVelocidad")?.GetComponent<TextMeshProUGUI>();
+        }
+
+        morph.GetComponent<PolyMorph>();
+        spritewood = Resources.Load<Sprite>("PELOTAS/PM");
+        spritemetal = Resources.Load<Sprite>("PELOTAS/PME");
+        spriteplastic = Resources.Load<Sprite>("PELOTAS/PG");
+
+        woodMaterial = Resources.Load<PhysicsMaterial2D>("PELOTAS/Wood");
+        metalMaterial = Resources.Load<PhysicsMaterial2D>("PELOTAS/Metal");
+        plasticMaterial = Resources.Load<PhysicsMaterial2D>("PELOTAS/Plastico");
+        
+    }
+
 
     void Update()
     {
@@ -181,7 +206,7 @@ public class BolaSimple : MonoBehaviour
         if (collision.gameObject.CompareTag("Agua"))
         {
             morph.SaliAgua();
-            rb.gravityScale = 1; // Restaurar la gravedad normal
+            rb.gravityScale = 10; // Restaurar la gravedad normal
         }
     }
 

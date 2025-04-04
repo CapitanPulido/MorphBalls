@@ -2,18 +2,29 @@ using UnityEngine;
 
 public class SmoothCameraFollow : MonoBehaviour
 {
-    public Transform target; // El jugador a seguir
-    public float smoothSpeed = 0.125f; // Ajusta la suavidad del seguimiento
-    public Vector3 offset; // Para ajustar la posición de la cámara
+    public Transform target; // Jugador
+    public float smoothTime = 0.3f; // Tiempo de suavizado
+    public Vector3 offset; // Ajuste de posición
+    private Vector3 velocity = Vector3.zero; // Velocidad usada por SmoothDamp
 
-    private Vector3 velocity = Vector3.zero; // Usado para SmoothDamp
+    // Límites de la cámara (ajústalos según el tamaño del mapa)
+    public float minX, maxX, minY, maxY;
 
     void LateUpdate()
     {
-        if (target != null)
-        {
-            Vector3 desiredPosition = target.position + offset;
-            transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothSpeed);
-        }
+        if (target == null) return;
+
+        // Nueva posición deseada de la cámara
+        Vector3 targetPosition = new Vector3(target.position.x + offset.x, target.position.y + offset.y, transform.position.z);
+
+        // Suavizar el movimiento con SmoothDamp
+        Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+
+        // Restringir la posición dentro de los límites del mapa
+        float clampedX = Mathf.Clamp(smoothedPosition.x, minX, maxX);
+        float clampedY = Mathf.Clamp(smoothedPosition.y, minY, maxY);
+
+        // Aplicar la nueva posición restringida
+        transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }
 }

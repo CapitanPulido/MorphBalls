@@ -32,7 +32,7 @@ public class PolyMorph : MonoBehaviour
         estado = 0; // Comenzamos en madera
         AplicarPropiedadesMaterial();
 
-        rb.gravityScale = 1; // Restaurar la gravedad normal
+        rb.gravityScale = 10; // Restaurar la gravedad normal
         Madera = true;
         Plastico = false;
         Metal = false;
@@ -43,19 +43,6 @@ public class PolyMorph : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            int estadoAnterior = estado;
-            estado = (estado + 1) % 3; // Cambia entre 0 (Madera), 1 (Plástico), 2 (Metal)
-            AplicarPropiedadesMaterial();
-
-            // Si estaba en el fondo con metal y cambia a otro material, aplicamos impulso
-            if (enAgua && estadoAnterior == 2 && estado < 2)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, 10f); // Expulsión del agua
-            }
-        }
-
 
         if(enAgua == true && Madera == true)
         {
@@ -69,7 +56,7 @@ public class PolyMorph : MonoBehaviour
 
         if (enAgua == true && Metal == true)
         {
-            rb.gravityScale = 2f;
+            rb.gravityScale = 10;
         }
 
     }

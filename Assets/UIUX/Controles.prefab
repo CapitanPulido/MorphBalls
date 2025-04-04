@@ -842,7 +842,7 @@ GameObject:
   - component: {fileID: 6440104865846507670}
   - component: {fileID: 4429344426234206641}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: SliderVelocidad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1039,7 +1039,7 @@ GameObject:
   - component: {fileID: 182748514547932866}
   - component: {fileID: 593415636983640761}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TextoVelocidad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
