@@ -9,11 +9,13 @@ public class Caja : MonoBehaviour
     public Rigidbody2D Rb;
     public Rigidbody2D Rb2;
 
+    public float Masa1;
+
     // Start is called before the first frame update
     void Start()
     {
-        Rb.mass = 1000;
-        Rb2.mass = 1000;
+        Rb.mass = Masa1;
+        Rb2.mass = Masa1;
     }
 
     // Update is called once per frame

@@ -39,6 +39,6 @@ public class Spring : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(transform.position, new Vector3(1, 0.5f, 0));
+        Gizmos.DrawWireCube(transform.position, new Vector3(2, .5f, 0));
     }
 }
