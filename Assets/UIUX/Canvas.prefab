@@ -77,12 +77,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2814656331035953814, guid: 02b41b1b3949e1243909d5cc30fb6d54, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3002957187325098350, guid: 02b41b1b3949e1243909d5cc30fb6d54, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1102986849486249162}
+    - target: {fileID: 3002957187325098350, guid: 02b41b1b3949e1243909d5cc30fb6d54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002957187325098350, guid: 02b41b1b3949e1243909d5cc30fb6d54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4037943742304572757, guid: 02b41b1b3949e1243909d5cc30fb6d54, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -268,15 +276,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1659390354425810407, guid: ef78abbeca000b84e8c31c3caa625d1e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1659390354425810407, guid: ef78abbeca000b84e8c31c3caa625d1e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1659390354425810407, guid: ef78abbeca000b84e8c31c3caa625d1e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1659390354425810407, guid: ef78abbeca000b84e8c31c3caa625d1e, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -415,7 +423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5615760998440055621, guid: c3626c1873cf4894c8920232c6cb58b5, type: 3}
       propertyPath: m_text
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -753,6 +761,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstaculos
       objectReference: {fileID: 0}
+    - target: {fileID: 8535666605908412631, guid: d51ad5206ba494745a4042fbb3c7f54a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -862,7 +874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464528189145623046, guid: 2019987eced6b9542bc6cc6a51fe0592, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7808226219199226521, guid: 2019987eced6b9542bc6cc6a51fe0592, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
