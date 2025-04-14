@@ -8302,30 +8302,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1102986849486249162, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2275423416495803730, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2275423416495803730, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2275423416495803730, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2517601439428648061, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3194001600220508037, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
     - target: {fileID: 3596197827526831530, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -8373,18 +8349,6 @@ PrefabInstance:
     - target: {fileID: 4664254276162523003, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5362324689240542058, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5835464855163145731, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}
-      propertyPath: m_text
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7454444486422830795, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9021257664127719694, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
