@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7378597651170754333}
   - component: {fileID: 6607389057843775635}
   - component: {fileID: 7169511331563232119}
+  - component: {fileID: 4415863001758105188}
   m_Layer: 0
   m_Name: Pelota
   m_TagString: Pelota
@@ -179,3 +180,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5.99
+--- !u!114 &4415863001758105188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2613547665071392333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00fb2076007ad843b849a5db25d28ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Spawn: {fileID: 0}
+  Ball: {fileID: 0}

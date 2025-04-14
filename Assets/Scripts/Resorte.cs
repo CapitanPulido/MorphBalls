@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Spring : MonoBehaviour
 {
-    public float fuerzaMetal = 15f;
-    public float fuerzaMadera = 10f;
-    public float fuerzaPlastico = 5f;
+    public float fuerzaMetal = -15f;
+    public float fuerzaMadera = -10f;
+    public float fuerzaPlastico = -5f;
 
     public PolyMorph morph;
     public float fuerza;
@@ -32,7 +32,7 @@ public class Spring : MonoBehaviour
         if (bola != null)
         {
             Rigidbody2D rb = bola.GetComponent<Rigidbody2D>(); 
-            rb.velocity = new Vector2(rb.velocity.y, fuerza);
+            rb.velocity = new Vector2(rb.velocity.x, fuerza);
         }
     }
 
