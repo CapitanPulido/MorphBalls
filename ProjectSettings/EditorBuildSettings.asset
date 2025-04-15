@@ -59,6 +59,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Niveles/15.unity
     guid: 8e29c9ea52502eb4690c69099e8e27d4
+  - enabled: 1
+    path: Assets/Scenes/Victoria.unity
+    guid: 7aecd883efb6129429bbc733d560e47e
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 7f623414e2a257e45981be2178cbbd69, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 26edb0f97e9390b46858dea463de0ab7, type: 2}
