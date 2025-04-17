@@ -61,9 +61,6 @@ public class PolyMorph : MonoBehaviour
 
     }
 
-   
-
-
     public void ChangeMaterial()
     {
         clickCount++;

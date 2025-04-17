@@ -6,9 +6,6 @@ public class Caja : MonoBehaviour
 {
     public PolyMorph morph;
 
-    public Rigidbody2D Rb;
-    public Rigidbody2D Rb2;
-
     public GameObject parteIzquierda;
     public GameObject parteDerecha;
     public float tiempoParaDestruir = 3f;
