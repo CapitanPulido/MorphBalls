@@ -4407,6 +4407,10 @@ PrefabInstance:
       propertyPath: morph
       value: 
       objectReference: {fileID: 1766403766}
+    - target: {fileID: 7378597651170754333, guid: b8dbd8b9ef6c2764caf95ca7101f8c67, type: 3}
+      propertyPath: moveForce
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8346,17 +8350,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5835464855163145731, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}
-      propertyPath: m_text
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 9021257664127719694, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1852943409}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5358701623565050808, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63af7d455b22d6b43bd1ea9b5823b730, type: 3}

@@ -21,7 +21,7 @@ public class Meta : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Pelota"))
         {
-            SceneManager.LoadScene("MenuNiveles");
+            SceneManager.LoadScene("Victoria");
         }
     }
 }

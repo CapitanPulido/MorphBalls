@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7378597651170754333}
   - component: {fileID: 6607389057843775635}
   - component: {fileID: 7169511331563232119}
+  - component: {fileID: 4415863001758105188}
   m_Layer: 0
   m_Name: Pelota
   m_TagString: Pelota
@@ -103,7 +104,7 @@ MonoBehaviour:
   speedText: {fileID: 0}
   morph: {fileID: 0}
   maxSpeed: 100
-  moveForce: 5
+  moveForce: 30
   friction: 0.99
   spritewood: {fileID: 0}
   spritemetal: {fileID: 0}
@@ -113,6 +114,10 @@ MonoBehaviour:
   left: 0
   right: 0
   velocidad: 3
+  col: {fileID: 0}
+  woodMaterial: {fileID: 0}
+  metalMaterial: {fileID: 0}
+  plasticMaterial: {fileID: 0}
 --- !u!50 &6607389057843775635
 Rigidbody2D:
   serializedVersion: 4
@@ -175,3 +180,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5.99
+--- !u!114 &4415863001758105188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2613547665071392333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00fb2076007ad843b849a5db25d28ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Spawn: {fileID: 0}
+  Ball: {fileID: 0}
