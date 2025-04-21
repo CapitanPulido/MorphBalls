@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6607389057843775635}
   - component: {fileID: 7169511331563232119}
   - component: {fileID: 4415863001758105188}
+  - component: {fileID: 8804208128703216015}
   m_Layer: 0
   m_Name: Pelota
   m_TagString: Pelota
@@ -102,9 +103,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedometer: {fileID: 0}
   speedText: {fileID: 0}
+  Spawn: {fileID: 0}
+  rb: {fileID: 0}
   morph: {fileID: 0}
+  animator: {fileID: 8804208128703216015}
   maxSpeed: 100
-  moveForce: 30
+  moveForce: 5
   friction: 0.99
   spritewood: {fileID: 0}
   spritemetal: {fileID: 0}
@@ -113,8 +117,11 @@ MonoBehaviour:
   enSuelo: 0
   left: 0
   right: 0
+  Destroyed: 0
   velocidad: 3
+  detener: 0
   col: {fileID: 0}
+  Controles: {fileID: 0}
   woodMaterial: {fileID: 0}
   metalMaterial: {fileID: 0}
   plasticMaterial: {fileID: 0}
@@ -194,3 +201,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawn: {fileID: 0}
   Ball: {fileID: 0}
+  ball: {fileID: 7378597651170754333}
+--- !u!95 &8804208128703216015
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2613547665071392333}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 570d5b958fc97454d8d1481fac216272, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

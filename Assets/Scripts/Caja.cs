@@ -38,7 +38,7 @@ public class Caja : MonoBehaviour
         }
     }
 
-    void DividirPared()
+    public void DividirPared()
     {
         // Separar las piezas y activar gravedad
         Rigidbody2D rbIzq = parteIzquierda.GetComponent<Rigidbody2D>();

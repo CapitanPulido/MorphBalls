@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2556227935118523088}
   - component: {fileID: 5451182605406994606}
   - component: {fileID: 6798784919784504893}
+  - component: {fileID: 3074942060061240146}
   m_Layer: 0
   m_Name: PlataformaGiratoria
   m_TagString: Untagged
@@ -184,3 +185,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &3074942060061240146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6816936456504326219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4950e797ad5af4bb470103cc390058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

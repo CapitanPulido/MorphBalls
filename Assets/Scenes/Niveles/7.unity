@@ -1156,6 +1156,10 @@ PrefabInstance:
       value: 2.4622
       objectReference: {fileID: 0}
     - target: {fileID: 5732005085336065612, guid: 500a11304c63607469765107fded5c00, type: 3}
+      propertyPath: col
+      value: 
+      objectReference: {fileID: 905852516}
+    - target: {fileID: 5732005085336065612, guid: 500a11304c63607469765107fded5c00, type: 3}
       propertyPath: morph
       value: 
       objectReference: {fileID: 894790723}
@@ -1227,6 +1231,11 @@ MonoBehaviour:
 --- !u!212 &894790724 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2070440184267672385, guid: 500a11304c63607469765107fded5c00, type: 3}
+  m_PrefabInstance: {fileID: 894790719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &905852516 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5374236549944111654, guid: 500a11304c63607469765107fded5c00, type: 3}
   m_PrefabInstance: {fileID: 894790719}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1027232992
@@ -1436,6 +1445,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2103824012383425942, guid: 91d1bef08905bd74e88e0963c605ee1a, type: 3}
+      propertyPath: morph
+      value: 
+      objectReference: {fileID: 894790723}
     - target: {fileID: 2895597517518744806, guid: 91d1bef08905bd74e88e0963c605ee1a, type: 3}
       propertyPath: m_LocalScale.x
       value: 9.995188
@@ -1638,9 +1651,10 @@ GameObject:
   - component: {fileID: 1619872154}
   - component: {fileID: 1619872153}
   - component: {fileID: 1619872155}
+  - component: {fileID: 1619872156}
   m_Layer: 0
   m_Name: Agua
-  m_TagString: Agua
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1744,7 +1758,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 5.4265566}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1755,8 +1769,34 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 80.259995, y: 41.932713}
+  m_Size: {x: 80.259995, y: 52.78582}
   m_EdgeRadius: 0
+--- !u!114 &1619872156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619872152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a6c99efd8f2fd479e0adabfbfddf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alturaMadera: -53
+  alturaPlastico: -23.4
+  alturaMetal: -78.5
+  fuerzaMadera: 30
+  fuerzaPlastico: 40
+  fuerzaMetal: 50
+  centroDelObjeto: {x: 0, y: 53, z: 0}
+  margen: 0.2
+  fuerzaHorizontal: 0
+  energiaAcumulada: 0
+  maxEnergiaAcumulada: 15
+  velocidadAcumulacion: 20
+  impulsoLiberado: 12
+  morph: {fileID: 894790723}
 --- !u!1 &1753177352
 GameObject:
   m_ObjectHideFlags: 0

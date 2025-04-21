@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro; // Importa TextMeshPro
+using System;
 
 public class BolaSimple : MonoBehaviour
 {
     public Slider speedometer; // Referencia al Slider
     public TextMeshProUGUI speedText; // Referencia al TextMeshPro
+    public Transform Spawn;
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     public PolyMorph morph;
+    public Animator animator;
 
     public float maxSpeed = 10f; // Velocidad máxima esperada
     public float moveForce = 5f; // Fuerza de movimiento
@@ -28,10 +31,13 @@ public class BolaSimple : MonoBehaviour
 
     public bool left = false;
     public bool right = false;
+    public bool Destroyed = false;
 
     public float velocidad;
+    public float detener = 0f;
 
     public CircleCollider2D col; // Referencia al Collider
+    public GameObject Controles;
 
     // Materiales físicos
     public PhysicsMaterial2D woodMaterial;
@@ -126,6 +132,22 @@ public class BolaSimple : MonoBehaviour
         {
             enSuelo = true;
         }
+
+        if (morph.Madera && collision.gameObject.CompareTag("Obstaculo"))
+        {
+            if(Destroyed == false)
+            {
+                StartCoroutine(MorirMadera());
+            }          
+        }
+
+        if (morph.Plastico && collision.gameObject.CompareTag("Obstaculo"))
+        {
+            if (Destroyed == false)
+            {
+                StartCoroutine(MorirPlastico());
+            }
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
@@ -140,7 +162,8 @@ public class BolaSimple : MonoBehaviour
     public void GravityWood()
     {
         //rb.mass = 5;
-        render.sprite = spritewood; 
+        render.sprite = spritewood;
+        animator.Play("Madera");
         col.sharedMaterial = woodMaterial;
         
     }
@@ -149,6 +172,7 @@ public class BolaSimple : MonoBehaviour
     {
         //rb.mass = 20;
         render.sprite = spritemetal;
+        animator.Play("Metal");
         col.sharedMaterial = metalMaterial;
     }
 
@@ -156,6 +180,7 @@ public class BolaSimple : MonoBehaviour
     {
         //rb.mass = 1;
         render.sprite = spriteplastic;
+        animator.Play("Plastico");
         col.sharedMaterial = plasticMaterial;
         Debug.Log("BouncePlastic");
     }
@@ -178,6 +203,7 @@ public class BolaSimple : MonoBehaviour
     public void StopMoving()
     {
         moveDirection = 0f;
+        
     }
 
 
@@ -210,5 +236,31 @@ public class BolaSimple : MonoBehaviour
         }
     }
 
+    public IEnumerator MorirMadera()
+    {
+        animator.Play("Explocion");
+        Destroyed = true;
+        Controles.SetActive(false);
+        yield return new WaitForSeconds(1);
+        Controles.SetActive(true);
+        Destroyed = false;
+        animator.Play("Madera");
+        transform.position = Spawn.transform.position;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = 0f;
+    }
 
+    public IEnumerator MorirPlastico()
+    {
+        animator.Play("Explocion");
+        Destroyed = true;
+        Controles.SetActive(false);
+        yield return new WaitForSeconds(1);
+        Controles.SetActive(true);
+        Destroyed = false;
+        animator.Play("Plastico");
+        transform.position = Spawn.transform.position;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = 0f;
+    }
 }

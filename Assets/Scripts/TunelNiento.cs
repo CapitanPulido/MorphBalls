@@ -12,6 +12,9 @@ public class TunelDeViento : MonoBehaviour
     public float fuerzaPlastico = 15f;
     public float fuerzaMetal = 8f;
 
+    [Header("Centro del Objeto (ajustable en el Inspector)")]
+    public Vector3 centroDelObjeto = Vector3.zero; // Centro ajustable desde el Inspector
+
     [Header("General")]
     public float margen = 0.2f;
     public float fuerzaHorizontal = 5f;
@@ -20,7 +23,6 @@ public class TunelDeViento : MonoBehaviour
     public float maxEnergiaAcumulada = 15f;
     public float velocidadAcumulacion = 20f;
     public float impulsoLiberado = 12f;
-
 
     public PolyMorph morph;
 
@@ -47,29 +49,8 @@ public class TunelDeViento : MonoBehaviour
                 }
                 else if (morph.Plastico == true)
                 {
-
-                        alturaDeseada = alturaPlastico;
-                        fuerzaVertical = fuerzaPlastico;
-
-                         diferenciaAltura = alturaDeseada - rb.position.y;
-
-                        if (diferenciaAltura > margen)
-                        {
-                            // Acumulamos energía si está debajo de la altura deseada
-                            energiaAcumulada += Time.deltaTime * velocidadAcumulacion;
-                            energiaAcumulada = Mathf.Clamp(energiaAcumulada, 0f, maxEnergiaAcumulada);
-
-                            // En lugar de fuerza proporcional, aplicamos una fuerza constante
-                            rb.AddForce(new Vector2(0f, fuerzaVertical));
-                        }
-                        else if (energiaAcumulada > 0)
-                        {
-                            // Liberamos el impulso hacia arriba de golpe
-                            rb.AddForce(new Vector2(0f, impulsoLiberado * energiaAcumulada), ForceMode2D.Impulse);
-                            energiaAcumulada = 0f;
-                        }
-                    
-
+                    alturaDeseada = alturaPlastico;
+                    fuerzaVertical = fuerzaPlastico;
                 }
                 else if (morph.Metal == true)
                 {
@@ -98,22 +79,40 @@ public class TunelDeViento : MonoBehaviour
             Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.gravityScale = 10f; // Restaurar gravedad normal
+                rb.gravityScale = 1f; // Restaurar gravedad normal
             }
         }
     }
 
     private void OnDrawGizmos()
     {
-        // Mostrar las alturas por tipo de material
+        Vector3 origen = transform.position + centroDelObjeto; // Ajustamos el origen con el centro definido
+
+        // Dirección del viento (tomando en cuenta la rotación del objeto)
+        Vector3 direccionViento = transform.up.normalized; // Usamos up para la dirección del viento
+
+        // === GIZMO DE CENTRO ===
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(origen, 0.1f); // Punto central del túnel
+
+        // === LÍNEAS DE ALTURA ===
+        // Línea para Madera
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(new Vector3(transform.position.x - 1.5f, alturaMadera, 0), new Vector3(transform.position.x + 1.5f, alturaMadera, 0));
+        Vector3 alturaMaderaPos = origen + direccionViento * alturaMadera;
+        Gizmos.DrawLine(alturaMaderaPos - transform.right * 1.5f, alturaMaderaPos + transform.right * 1.5f);
 
+        // Línea para Plástico
         Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(new Vector3(transform.position.x - 1.5f, alturaPlastico, 0), new Vector3(transform.position.x + 1.5f, alturaPlastico, 0));
+        Vector3 alturaPlasticoPos = origen + direccionViento * alturaPlastico;
+        Gizmos.DrawLine(alturaPlasticoPos - transform.right * 1.5f, alturaPlasticoPos + transform.right * 1.5f);
 
+        // Línea para Metal
         Gizmos.color = Color.gray;
-        Gizmos.DrawLine(new Vector3(transform.position.x - 1.5f, alturaMetal, 0), new Vector3(transform.position.x + 1.5f, alturaMetal, 0));
+        Vector3 alturaMetalPos = origen + direccionViento * alturaMetal;
+        Gizmos.DrawLine(alturaMetalPos - transform.right * 1.5f, alturaMetalPos + transform.right * 1.5f);
+
+        // === OPCIONAL: Línea de dirección del viento (visualización de la dirección) ===
+        Gizmos.color = new Color(1, 1, 1, 0.3f);
+        Gizmos.DrawLine(origen - direccionViento * 5f, origen + direccionViento * 5f);
     }
 }
-
