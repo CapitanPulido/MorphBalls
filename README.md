@@ -15,6 +15,16 @@ Morphballs es un videojuego estilo cartoon para celular donde controlaras una pe
 - C#
 - Photoshop
 
+## Capturas de pantalla
+
+<p align="center">
+  <img src="./Assets/GitHub/MP.png" width="400"/>
+  <img src="./Assets/GitHub/GAME.png" width="400"/>
+  <img src="./Assets/GitHub/MSN.png" width="400"/>
+  <img src="./Assets/GitHub/OP.png" width="400"/>
+  <img src="./Assets/GitHub/GIF.gif" width="1200"/>
+</p>
+
 ##  Cómo ejecutar el proyecto
 
 1. Clona el repositorio:
