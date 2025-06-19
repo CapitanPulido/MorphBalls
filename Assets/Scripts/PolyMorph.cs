@@ -1,4 +1,3 @@
-using UnityEditor.AnimatedValues;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,9 +6,9 @@ public class PolyMorph : MonoBehaviour
     public Rigidbody2D rb;
     public Texture2D[] texturas;
     public SpriteRenderer render;
-    private int estado = 0; // 0: Madera, 1: Plástico, 2: Metal  
+    //private int estado = 0; // 0: Madera, 1: Plástico, 2: Metal  
     public bool enAgua = false;
-    private float alturaAgua = 0f;
+    //private float alturaAgua = 0f;
     private int clickCount = 0;
     public Image buttonImage;
 
@@ -29,8 +28,8 @@ public class PolyMorph : MonoBehaviour
             rb = GetComponent<Rigidbody2D>();
         
 
-        estado = 0; // Comenzamos en madera
-        AplicarPropiedadesMaterial();
+        //estado = 0; // Comenzamos en madera
+        //AplicarPropiedadesMaterial();
 
         rb.gravityScale = 10; // Restaurar la gravedad normal
         Madera = true;
@@ -43,21 +42,6 @@ public class PolyMorph : MonoBehaviour
 
     void Update()
     {
-
-        if(enAgua == true && Madera == true)
-        {
-            rb.gravityScale = 0f;
-        }
-
-        if (enAgua == true && Plastico == true)
-        {
-            rb.gravityScale = -1f;
-        }
-
-        if (enAgua == true && Metal == true)
-        {
-            rb.gravityScale = 10;
-        }
 
     }
 
@@ -104,32 +88,32 @@ public class PolyMorph : MonoBehaviour
     }
 
 
-    public void AplicarPropiedadesMaterial()
-    {
-        switch (estado)
-        {
-            case 0: // Madera (queda en la altura media)
-                rb.gravityScale = 0f;
-                if (enAgua && transform.position.y < alturaAgua - 1) // Mantenerse en el medio
-                {
-                    rb.velocity = new Vector2(rb.velocity.x, 2f);
-                }
-                break;
+    //public void AplicarPropiedadesMaterial()
+    //{
+    //    switch (estado)
+    //    {
+    //        case 0: // Madera (queda en la altura media)
+    //            rb.gravityScale = 0f;
+    //            if (enAgua && transform.position.y < alturaAgua - 1) // Mantenerse en el medio
+    //            {
+    //                rb.velocity = new Vector2(rb.velocity.x, 2f);
+    //            }
+    //            break;
 
-            case 1: // Plástico (flota en la superficie)
-                rb.gravityScale = -0.5f;
-                if (enAgua && transform.position.y < alturaAgua) // Mantenerse en la superficie
-                {
-                    rb.velocity = new Vector2(rb.velocity.x, 3f);
-                }
-                break;
+    //        case 1: // Plástico (flota en la superficie)
+    //            rb.gravityScale = -0.5f;
+    //            if (enAgua && transform.position.y < alturaAgua) // Mantenerse en la superficie
+    //            {
+    //                rb.velocity = new Vector2(rb.velocity.x, 3f);
+    //            }
+    //            break;
 
-            case 2: // Metal (se hunde hasta el fondo)
-                rb.gravityScale = 2f;
-                break;
-        }
+    //        case 2: // Metal (se hunde hasta el fondo)
+    //            rb.gravityScale = 2f;
+    //            break;
+    //    }
 
-    }
+    //}
 
     public void DetectarAgua()
     {

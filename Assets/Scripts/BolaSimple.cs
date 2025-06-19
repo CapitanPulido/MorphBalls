@@ -16,7 +16,7 @@ public class BolaSimple : MonoBehaviour
     public Animator animator;
 
     public float maxSpeed = 10f; // Velocidad máxima esperada
-    public float moveForce = 5f; // Fuerza de movimiento
+    public float moveForce ; // Fuerza de movimiento
     public float friction = 0.95f; // Fricción para reducir la velocidad
 
     public Sprite spritewood;
@@ -35,6 +35,8 @@ public class BolaSimple : MonoBehaviour
 
     public float velocidad;
     public float detener = 0f;
+
+    public AudioSource agua;
 
     public CircleCollider2D col; // Referencia al Collider
     public GameObject Controles;
@@ -211,6 +213,8 @@ public class BolaSimple : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Agua"))
         {
+            agua.Play();
+            moveForce = 450;
             morph.DetectarAgua();
             //morph.AplicarPropiedadesMaterial();
         }
@@ -231,6 +235,7 @@ public class BolaSimple : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Agua"))
         {
+            moveForce = 40;
             morph.SaliAgua();
             rb.gravityScale = 10; // Restaurar la gravedad normal
         }

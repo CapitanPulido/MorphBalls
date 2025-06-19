@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Reintentar : MonoBehaviour
 {
@@ -29,6 +30,12 @@ public class Reintentar : MonoBehaviour
             ball.StopMoving();
             ball.rb.velocity = Vector3.zero;
             ball.rb.angularVelocity = 0f;
+            Reiniciar();
         }
+    }
+
+    public void Reiniciar()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

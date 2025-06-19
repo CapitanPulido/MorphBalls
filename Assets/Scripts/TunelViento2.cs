@@ -28,7 +28,7 @@ public class TunelDeVientoHorizontal : MonoBehaviour
 
             if (rb != null && morph != null)
             {
-                rb.gravityScale = 1f;
+                rb.gravityScale = 10f;
                 //rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, 0.2f);
 
                 float posicionDeseada = 0f;
@@ -72,7 +72,7 @@ public class TunelDeVientoHorizontal : MonoBehaviour
             Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.gravityScale = 1f;
+                rb.gravityScale = 10f;
             }
         }
     }

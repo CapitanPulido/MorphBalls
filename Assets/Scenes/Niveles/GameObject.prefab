@@ -161,6 +161,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pelota
       objectReference: {fileID: 0}
+    - target: {fileID: 7378597651170754333, guid: b8dbd8b9ef6c2764caf95ca7101f8c67, type: 3}
+      propertyPath: maxSpeed
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378597651170754333, guid: b8dbd8b9ef6c2764caf95ca7101f8c67, type: 3}
+      propertyPath: moveForce
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
